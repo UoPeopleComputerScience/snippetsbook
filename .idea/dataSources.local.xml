@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="snippetsbook" uuid="da61280c-d931-4562-9b9d-ce1f1baf8567">
+      <secret-storage>master_key</secret-storage>
+    </data-source>
+  </component>
+</project>
