@@ -1,5 +1,26 @@
-<% @notes.each do |note|%>
-    <h2><%= link_to note.title, note %></h2>
-    <p><%= time_ago_in_words(note.created_at)%></p>
+
+<% unless @notes.blank? %>
+    <div class="row">
+      <% @notes.each do |note|%>
+          <div class="col s12 m3 ">
+            <%= link_to note do  %>
+            <div class="card-panel pink darken-1 white-text z-depth-3">
+              <h4 class="white-text center-align"><%=  note.title %></h4>
+              <p><%= time_ago_in_words(note.created_at)%></p>
+            </div>
+            <% end %>
+          </div>
+    <% end %>
+    </div>
+    <div class="right">
+    <%= link_to '', new_note_path, class:'btn-floating btn-large waves-effect waves-light red mdi-content-add' %>
+    </div>
+    <br><br><br>
+<% else %>
+        <h2>Add Note</h2>
+        <p>it appears you haven't created any note yet. </p>
+    <%= link_to '', new_note_path, class:'btn-floating btn-large waves-effect waves-light red mdi-content-add' %>
+
+
 <% end %>
-<%= link_to 'New Note', new_note_path %>
+

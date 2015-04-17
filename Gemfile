@@ -48,5 +48,7 @@ group :development, :test do
   gem 'devise', '~> 3.4.1'
   # simple form
   gem 'simple_form', '~> 3.1.0'
+  #materialize
+  gem 'materialize-sass'
 end
 

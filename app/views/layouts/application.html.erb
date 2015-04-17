@@ -7,11 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<%= render 'layouts/header' %>
+
+  <% flash.each  do |name,msg|  %>
+      <%= content_tag(:div,msg,class: "alert alert-info")%>
+  <% end %>
+
+  <%= yield %>
 
 
-<%= yield %>
+<%= render 'layouts/footer' %>
+<script>
+    (function($){
+        $(function(){
 
+            $('.button-collapse').sideNav();
+            $('.parallax').parallax();
+            $(".dropdown-button").dropdown({ hover: false });
+
+
+        }); // end of document ready
+    })(jQuery); // end of jQuery name space
+</script>
 </body>
 </html>

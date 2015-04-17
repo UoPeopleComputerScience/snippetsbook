@@ -1,0 +1,56 @@
+
+
+<nav class="red darken-4" role="navigation">
+  <div class="nav-wrapper container">
+    <%= link_to 'Snippets',notes_path, class:'brand-logo',id:'logo-container' %>
+
+    <ul class="right hide-on-med-and-down ">
+
+      <li>
+        <% if user_signed_in?%>
+
+            <!-- Dropdown Trigger -->
+            <a class='dropdown-button  mdi-action-account-circle' href='#' data-activates='dropdown1'></a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><%= link_to 'New Note', new_note_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+              <li class="divider"></li>
+              <li><li><%= link_to 'Donate', new_note_path%></li>
+            </ul>
+
+        <% else %>
+            <%= link_to '', new_user_session_path,class:' mdi-action-account-circle' %>
+        <%end%>
+      </li>
+
+
+    </ul>
+<!-- Side nave-->
+
+    <% if user_signed_in? %>
+        <ul id="nav-mobile" class="side-nav red darken-4 waves-effect waves-light">
+            <div>
+                <img src="http://www.daz.com.tw/wp-content/uploads/2011/10/su1.jpg" >
+                Add a category<%= link_to '', new_note_path, class:'btn-floating btn-large waves-effect waves-light red mdi-content-add right' %>
+            </div>
+            <div class="clearfix">
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <li><a href="#">Navbar Link</a></li>
+                <br>
+            </div>
+            <div class="footer-copyright">
+            © 2014 Copyright<a class="grey-text text-lighten-4 right" href="#!">Adam Debbagh</a>
+            </div>
+        </ul>
+        <% end %>
+
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </div>
+</nav>

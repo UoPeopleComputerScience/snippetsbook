@@ -1,6 +1,14 @@
-<h1><%= @note.title %></h1>
-<p><%= @note.content %></p>
+<div class="container valign-wrapper">
 
-<%= link_to 'All Notes', notes_path %>
-<%= link_to 'Edit', edit_note_path %> |
-<%= link_to 'Delete', note_path(@note), method: :delete, data: {confirm: 'Are you sure?'}  %>
+    <div class="card-panel red accent-3 text-darken-2 z-depth-5">
+
+      <h4 class="white-text"><%= @note.title %></h4>
+       <span class="white-text flow-text text-darken-2"><%= simple_format(@note.content) %></span>
+
+      <%= link_to '', notes_path, class:' pink darken-2 waves-effect waves-light btn mdi-content-select-all right' %>
+      <%= link_to '', edit_note_path,class: 'pink darken-2 waves-effect waves-light btn right mdi-content-create' %>
+      <%= link_to '', note_path(@note),class:'pink darken-2 waves-effect waves-light btn  mdi-content-clear right', method: :delete, data: {confirm: 'Are you sure?'}  %>
+
+
+    </div>
+</div>
